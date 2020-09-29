@@ -11,7 +11,7 @@
   </head>
 
   <body class="gray-background">
-    <%= render :partial => 'shared/navbar' unless home? %>
+    <%= render :partial => 'shared/navbar' unless home? || profile? %>
     <%= yield %>
   </body>
 </html>

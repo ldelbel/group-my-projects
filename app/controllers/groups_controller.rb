@@ -1,15 +1,17 @@
 class GroupsController < ApplicationController
+  include SessionsHelper
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @group = Group.find(params[:id])
   end
 
   # GET /groups/new
@@ -59,6 +61,10 @@ class GroupsController < ApplicationController
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   private
