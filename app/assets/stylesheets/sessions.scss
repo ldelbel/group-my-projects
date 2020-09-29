@@ -2,3 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.login-form {
+  font-size: 2em;
+  margin-top: 0.4em;
+  width: 100%;
+  
+  input[type='text'] {
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid #989DA3;
+    border-bottom: 1px solid #989DA3;
+    font-size: 0.6em;
+    padding: 0.5em;
+
+    &::placeholder {
+      color: #989DA3;
+    }
+  }
+}
+
+.signup-link {
+  color: #989DA3;
+  margin-top: 1em;
+}
+

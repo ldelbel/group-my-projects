@@ -1,9 +1,25 @@
-
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(55,119,193,1) 0%, rgba(43,98,156,1) 100%);
+  color: white;
+  font-size: 3.5em;
+  height: 2.2em; 
+  padding: 0 0.5em 0 0.5em;
+}
 
 main {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home {
   width: 100vw;
   height: 100vh;
-  padding-bottom: 15em;
+  padding-bottom: 5em;
 }
 
 .button_to {
@@ -50,8 +66,8 @@ input,
 
 .btn {
   margin: 1em 0 1em 0;
-  padding: 0.5em;
-  font-size: 4em;
+  padding: 0.8em;
+  font-size: 1em;
   width: 100%;
 
   &-90 {
@@ -76,6 +92,10 @@ input,
 
 .blue {
   background-color: #3979C3;
+  color: white;
+}
+
+.white {
   color: white;
 }
 

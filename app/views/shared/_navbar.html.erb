@@ -1,0 +1,17 @@
+<nav>
+
+    <%= link_to root_url do %>
+      <i class="fas fa-arrow-left white"></i>
+    <% end %>
+    
+    <% if login_page? %>
+      <h3>LOGIN</h3>
+    <% elsif signup_page? %>
+      <h3>SIGNUP</h3>
+    <% end %>
+
+    <%= submit_tag "Log in", form: 'login-form' if login_page? %>
+    <%= submit_tag "Next", form: 'signup-form' if signup_page? %>
+    
+
+</nav>
