@@ -4,6 +4,7 @@ module ApplicationHelper
   end
 
   def profile?
+    return false if current_user.nil?
     request.url == user_url(current_user)
   end
 
