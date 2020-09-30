@@ -1,25 +1,53 @@
+<main>
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<div class="total-time">
+  <p>Dev Time</p>
+  <span>
+    <%= @projects.sum(:time_spent) %> hours
+  </span>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @projects.each do |project| %>
+  <%= link_to(project, class: 'block-link') do %>
+  <div class="project-card">
+    <div class="project-card__img"></div>
+    <div class="project-card__body">
+      <div class="project-card__body__upper">
+        <div class="project-card__body__upper__title">
+          <%= project.name %>
+        </div>
+        <div class="project-card__body__upper__time">
+          <%= project.time_spent %> hrs
+        </div>
+      </div>    
+      <div class="project-card__body__bottom">
+        Last Update: <%= project.updated_at.to_date.to_formatted_s(:long) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  
+  <tr>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
+
+<% end %>
+
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to(new_project_path, class: 'block-link') do %>
+<div class="new-project-button flex-center">
+  <div class="new-project-button__div flex-center">
+    New Project
+  </div>
+</div>
+<% end %>
+
+</main>

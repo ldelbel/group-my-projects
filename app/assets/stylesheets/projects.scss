@@ -1,0 +1,174 @@
+.total-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em 0 0.5em;
+  width: 100%;
+  height: 3em;
+  background-color: white;
+  border-bottom: 2px solid #b1adb1;
+
+  p {
+    color: #878A8F;
+  }
+
+  span {
+    color: #434b54;
+    font-weight: 700;
+  }
+}
+
+.block-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 0.6em;
+}
+
+.project-card {
+  width: 95%;
+  margin: 0 auto;
+  height: 5em;
+  background-color: white;
+  border: 1px solid #b1adb1;
+  padding: 0.5em;
+  display: flex;
+
+  &__img {
+    margin-right: 0.7em;
+    width: 4em;
+    height: 4em;
+    background-image: url('../images/ruby-programming-language.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #434b54;
+  }
+
+  &__body {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    
+    &__upper {
+      display: flex;
+      justify-content: space-between;
+      height: 2.8em;
+      border-bottom: 1px solid #b1adb1;
+    
+      &__title,
+      &__time {
+        font-size: 0.9em;
+        line-height: 2.8em;
+      }
+
+      &__title {
+        color: #878A8F;
+      }
+
+      &__time {
+        font-weight: 700;
+        color: #434b54;
+      }
+    }
+
+    &__bottom {
+      font-size: 0.7em;
+      color: #b1adb1;
+      line-height: 1.7em;
+    }
+  }
+}
+
+.new-project-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #5fb523;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  height: 2em;
+  line-height: 2em;
+  
+  &__div {
+    border: 3px solid white;
+    margin: auto;
+    width: 95%;
+    height: 75%;
+  }
+}
+
+.project-show {
+  margin-top: 1em;
+  width: 95%;
+  background-color: white;
+  height: 15em;
+
+  &__container {
+    width: 90%;
+    height: 90%;
+
+    &__info {
+      padding-bottom: 1em;
+      border-bottom: 1px solid #b1adb1;
+
+      &__upper {
+        display: flex;
+
+        
+        &__img {
+          margin-right: 0.7em;
+          width: 3em;
+          height: 3em;
+          background-image: url('../images/ruby-programming-language.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: #434b54;
+        }
+
+        &__title {
+          line-height: 3em;
+        }
+      }
+
+      &__bottom {
+        margin-top: 1em;
+        font-size: 0.8em;
+        color: #b1adb1;
+      }
+    }
+
+    &__time {
+      display: flex;
+      justify-content: space-between;
+      height: 3.1em;
+      line-height: 3.1em;
+
+      p {
+        font-size: 0.8em;
+        color: #878A8F;
+      }
+
+      span {
+        font-weight: 700;
+        color: #434b54;
+      }
+    }
+  }
+}
+
+.delete-project {
+  width: 100%;
+  
+  display: flex;
+
+  a {
+    color: rgb(194, 36, 36);
+    display: block;
+    width: 95%;
+    text-align: end;
+  }
+}

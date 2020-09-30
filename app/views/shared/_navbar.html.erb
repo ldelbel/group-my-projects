@@ -1,8 +1,20 @@
 <nav>
     <% if logged_in? %>
-      <%= link_to user_path(current_user) do %>
-        <i class="fas fa-arrow-left white"></i>
+
+      <% if project_page?(@project) %>
+        
+        <%= link_to projects_url do %>
+          <i class="fas fa-arrow-left white"></i>
+        <% end %>
+
+      <% else %>
+        
+        <%= link_to user_path(current_user) do %>
+          <i class="fas fa-arrow-left white"></i>      
+        <% end %>
+
       <% end %>
+    
     <% else %>
       <%= link_to root_url do %>
         <i class="fas fa-arrow-left white"></i>
@@ -11,11 +23,17 @@
 
 
     <% if login_page? %>
-      <h3>LOGIN</h3>
+      <h4>LOGIN</h4>
     <% elsif signup_page? %>
       <h3>REGISTER</h3>
+    <% elsif projects_page? %>
+      <h4>PROJECTS</h4>
+    <% elsif project_page?(@project) %>
+      <h4><%= @project.name %></h4>
     <% end %>
 
     <%= submit_tag "Log in", form: 'login-form' if login_page? %>
     <%= submit_tag "Next", form: 'signup-form' if signup_page? %>
+    <%# CHANGE HERE TO MENU %>
+    <%= submit_tag "Next", form: 'signup-form' if projects_page? %>
 </nav>

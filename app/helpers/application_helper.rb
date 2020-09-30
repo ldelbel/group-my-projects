@@ -16,4 +16,14 @@ module ApplicationHelper
     request.url == signup_url
   end
 
+  def projects_page?
+    request.url == projects_url
+  end
+
+  def project_page?(project)
+    return false if project.nil?
+    request.url == project_url(project.id)
+  end
+
+
 end
