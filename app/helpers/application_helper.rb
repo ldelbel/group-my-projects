@@ -21,9 +21,25 @@ module ApplicationHelper
   end
 
   def project_page?(project)
-    return false if project.nil?
+    return false if project.nil? || project.id.nil?
     request.url == project_url(project.id)
   end
 
+  def new_project_page?
+    request.url == new_project_url
+  end
+
+  def groups_page?
+    request.url == groups_url
+  end
+
+  def group_page?(group)
+    return false if group.nil? || group.id.nil?
+    request.url == group_url(group.id)
+  end
+
+  def new_group_page?
+    request.url == new_group_url
+  end
 
 end

@@ -1,26 +1,23 @@
 <nav>
     <% if logged_in? %>
-
-      <% if project_page?(@project) %>
-        
+      <% if project_page?(@project) || new_project_page? %>   
         <%= link_to projects_url do %>
           <i class="fas fa-arrow-left white"></i>
         <% end %>
-
-      <% else %>
-        
+      <% elsif group_page?(@group) || new_group_page? %>
+        <%= link_to groups_url do %>
+          <i class="fas fa-arrow-left white"></i>
+        <% end %>
+      <% else %>        
         <%= link_to user_path(current_user) do %>
           <i class="fas fa-arrow-left white"></i>      
         <% end %>
-
-      <% end %>
-    
+      <% end %>    
     <% else %>
       <%= link_to root_url do %>
         <i class="fas fa-arrow-left white"></i>
       <% end %>
     <% end %>
-
 
     <% if login_page? %>
       <h4>LOGIN</h4>
@@ -30,6 +27,14 @@
       <h4>PROJECTS</h4>
     <% elsif project_page?(@project) %>
       <h4><%= @project.name %></h4>
+    <% elsif new_project_page? %>
+      <h4>NEW PROJECT</h4>
+    <% elsif groups_page? %>
+      <h4>GROUPS</h4>
+    <% elsif group_page?(@group) %>
+      <h4><%= @group.name %> Projects</h4>
+    <% elsif new_group_page? %>
+      <h4>NEW GROUP</h4>
     <% end %>
 
     <%= submit_tag "Log in", form: 'login-form' if login_page? %>

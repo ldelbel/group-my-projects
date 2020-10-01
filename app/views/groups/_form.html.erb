@@ -1,17 +1,23 @@
-<%= form_with(model: group, local: true) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="project-show flex-center">
+  <div class="project-show__container">
+    <%= form_with(model: group, local: true) do |form| %>
+      <% if group.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
-        <% group.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% group.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions-new-project">
+            Icon
+            <div class="input-form"> Group Name <%= form.text_field :name %><br></div>
+            <div class="button-form-create"><%= form.submit %></div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

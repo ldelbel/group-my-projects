@@ -1,4 +1,26 @@
+<main>
+
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<% @projects.each do |project| %>
+  <%= link_to(project, class: 'block-link') do %>
+  <div class="project-card1">
+    <div class="project-card__img"></div>
+    <div class="project-card__body">
+      <div class="project-card__body__upper">
+        <div class="project-card__body__upper__title">
+          <%= project.name %>
+        </div>
+        <div class="project-card__body__upper__time">
+          <%= project.time_spent %> hrs
+        </div>
+      </div>    
+      <div class="project-card__body__bottom">
+        Last Update: <%= project.updated_at.to_date.to_formatted_s(:long) %><br>
+        Author: <%= User.find(project.user_id).name %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</main>
