@@ -7,6 +7,19 @@ nav {
   font-size: 3.5em;
   height: 2.2em; 
   padding: 0 0.5em 0 0.5em;
+
+  h4 {
+    font-size: 0.9em;
+    opacity: 85%;
+  }
+
+  input[type='submit'] {
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    opacity: 85%;
+
+  }
 }
 
 main {
@@ -109,3 +122,4 @@ input,
 .gray-background {
   background-color: #f1f3f2;
 }
+

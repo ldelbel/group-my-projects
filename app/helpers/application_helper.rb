@@ -116,17 +116,17 @@ module ApplicationHelper
     when login_page?
       "<h4>LOGIN</h4>".html_safe
     when signup_page?
-     "<h3>REGISTER</h3>".html_safe
+     "<h4>REGISTER</h4>".html_safe
     when projects_page?
       "<h4>PROJECTS</h4>".html_safe
     when project_page?(@project)
-      "<h4>#{@project.name}</h4>".html_safe
+      "<h4>#{@project.name.upcase}</h4>".html_safe
     when new_project_page?
       "<h4>NEW PROJECT</h4>".html_safe
     when groups_page?
       "<h4>GROUPS</h4>".html_safe
     when group_page?(@group)
-     "<h4>#{@group.name} Projects</h4>".html_safe
+     "<h4>#{@group.name.upcase} Projects</h4>".html_safe
     when new_group_page?
       "<h4>NEW GROUP</h4>".html_safe
     when edit_group_page?(@group)
