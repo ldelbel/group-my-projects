@@ -4,7 +4,14 @@ class ProjectsController < ApplicationController
 
 
   def index
-    @projects = current_user.projects
+    if params[:type].eql?('0')
+      @projects = current_user.projects
+    elsif params[:type].eql?('1')
+      @projects = current_user.projects.includes(:groups).where(groups: {id: nil})
+    else
+      @projects = current_user.projects
+    end
+    byebug
   end
 
   def show
@@ -19,8 +26,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.new(project_params)
-    @groups = Group.find(params[:group_ids])
-    @project.groups.push(@groups)
+    if !params[:group_ids].nil?
+      @groups = Group.find(params[:group_ids])
+      @project.groups.push(@groups)
+    end
     @project.save
 
     respond_to do |format|

@@ -23,7 +23,7 @@
     </div>
     <div class="profile-card__text-div">
       <p> 
-        <%= link_to 'All Projects', projects_path %>
+        <%= link_to 'All Projects', projects_path(type: 0) %>
       </p>
     </div>
   </div>
@@ -33,7 +33,7 @@
     </div>
     <div class="profile-card__text-div">
       <p> 
-        <%= link_to 'All External Projects', projects_path %>
+        <%= link_to 'All External Projects', projects_path(type: 1) %>
       </p>
     </div>
   </div>

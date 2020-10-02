@@ -79,4 +79,8 @@ module ApplicationHelper
     end
   end
 
+  def external_projects(user)
+    
+  end
+
 end
