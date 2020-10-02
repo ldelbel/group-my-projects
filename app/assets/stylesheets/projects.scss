@@ -43,11 +43,9 @@
     margin-right: 0.7em;
     width: 4em;
     height: 4em;
-    background-image: url('../images/ruby-programming-language.png');
     background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #434b54;
   }
 
   &__body {
@@ -106,10 +104,10 @@
 }
 
 .project-show {
-  margin-top: 1em;
+  margin: 1em 0;
   width: 95%;
   background-color: white;
-  height: 15em;
+  padding-bottom: 1em;
 
   &__container {
     width: 90%;
@@ -189,6 +187,16 @@
   }
 }
 
+.attach-form {
+  color: #434b54;
+  margin-top: 1em;
+
+  input {
+    border: 1px solid #b1adb1;
+    width: 100%;
+  }
+}
+
 .button-form-create {
   margin-top: 2em;
   height: 3em;
@@ -201,4 +209,55 @@
     font-weight: 700;
     font-size: 1.5em;
   }
+}
+
+.select {
+  margin-top: 1em;
+  font-weight: 600;
+  color: #878A8F;
+}
+
+.groups-list {
+  margin-top: 1em;
+  display: flex;
+  
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.3em;
+    width: -moz-fit-content;
+    width: fit-content;    
+    border: 2px solid #b1adb1;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+
+    &--img {    
+      height: 1.2em;
+      width: 1.2em;
+      background-position: center;
+      background-size: contain;
+      margin-right: 0.5em;
+    }
+
+    p {
+      font-size: 0.9em;
+      color: #434b54;
+    }
+  
+  }
+}
+
+.selected-groups {
+  margin-top: 1em;
+  font-weight: 600;
+  color: #878A8F;
+
+  p {
+    margin-right: 1em;
+  }
+}
+
+.checkbox {
+  width: 1em;
+  height: 1em;
 }

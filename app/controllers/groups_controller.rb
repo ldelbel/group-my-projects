@@ -45,6 +45,7 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @group.groupings.destroy_all
     @group.destroy
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
@@ -62,6 +63,6 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, :icon)
     end
 end

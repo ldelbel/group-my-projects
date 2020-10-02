@@ -11,7 +11,7 @@
 <% @projects.each do |project| %>
   <%= link_to(project, class: 'block-link') do %>
   <div class="project-card">
-    <div class="project-card__img"></div>
+    <div class="project-card__img" style="background-image: url(<%= rails_blob_url(project.groups.first.icon) %>)"></div>
     <div class="project-card__body">
       <div class="project-card__body__upper">
         <div class="project-card__body__upper__title">

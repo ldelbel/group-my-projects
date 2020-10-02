@@ -15,7 +15,28 @@
 
       <div class="actions-new-project">
             <div class="input-form"> Project Name <%= form.text_field :name %><br></div>
-            <div class="input-form">Time Consumed (in hours) <%= form.number_field :time_spent %></div> 
+            <div class="input-form">Time Consumed (in hours) <%= form.number_field :time_spent %></div>
+            <div class="select">Select groups:</div>
+
+            <div class="groups-list">
+ 
+              
+              <% Group.all.each do |group|  %>
+                <%= check_box_tag 'group_ids[]', group.id %>          
+                  <div class="groups-list__item">
+                    <div class="groups-list__item--img" style="background-image: url(<%= rails_blob_url(group.icon) %>)"></div>
+                    <p><%= group.name %></p>
+                  </div>
+              <% end %>
+
+
+            </div>
+            <div class="selected-groups flex">
+              <p> Selected: </p>
+              <% @project.groups.each do |group| %>
+                  <div class="groups-list__item--img" style="background-image: url(<%= rails_blob_url(group.icon) %>)"></div>
+              <% end %>
+            </div>
             <div class="button-form-create"><%= form.submit %></div>
       </div>
     <% end %>

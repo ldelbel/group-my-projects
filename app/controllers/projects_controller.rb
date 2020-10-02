@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   include SessionsHelper
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @projects = current_user.projects
   end
@@ -17,7 +18,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.create(project_params)
+    @project = current_user.projects.new(project_params)
+    @groups = Group.find(params[:group_ids])
+    @project.groups.push(@groups)
+    @project.save
 
     respond_to do |format|
       if @project.save

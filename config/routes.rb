@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :groups
   resources :projects
 
+
   root to: 'application#home'
 end
