@@ -63,4 +63,20 @@ module ApplicationHelper
     end
   end
 
+  def avatar_url_swap(user)
+    if !user.avatar.attached?
+      asset_path('avatar.jpg')
+    else
+      rails_blob_url(user.avatar)
+    end
+  end
+
+  def opacity_def(user)
+    if !user.avatar.attached?
+      '75%'
+    else
+      '100%'
+    end
+  end
+
 end
