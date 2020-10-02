@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def projects_page?
-    request.url == projects_url
+    request.path == projects_path
   end
 
   def project_page?(project)
