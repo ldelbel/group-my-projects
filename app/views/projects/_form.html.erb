@@ -21,7 +21,7 @@
             <div class="groups-list">
  
               
-              <% Group.all.each do |group|  %>
+              <% @user.groups.each do |group|  %>
                 <div class='flex-ai'>
                   <%= check_box_tag 'group_ids[]', group.id %>          
                   <div class="groups-list__item">

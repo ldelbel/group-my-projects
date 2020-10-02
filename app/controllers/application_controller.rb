@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
   def home
+    redirect_to user_url(current_user) if !current_user.nil?
   end
 
   def current_user

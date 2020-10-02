@@ -37,8 +37,11 @@
       <h4>NEW GROUP</h4>
     <% elsif edit_group_page?(@group) %>
       <h4>EDIT GROUP</h4>
+    <% elsif edit_user_page?(@user) %>
+      <h4>EDIT USER</h4>
     <% end %>
 
     <%= submit_tag "Log in", form: 'login-form' if login_page? %>
     <%= submit_tag "Next", form: 'signup-form' if signup_page? %>
+    <%= submit_tag "Edit", form: 'signup-form' if edit_user_page?(@user) %>
 </nav>

@@ -5,6 +5,7 @@ module ApplicationHelper
 
   def profile?
     return false if current_user.nil?
+
     request.url == user_url(current_user)
   end
 
@@ -22,6 +23,7 @@ module ApplicationHelper
 
   def project_page?(project)
     return false if project.nil? || project.id.nil?
+
     request.url == project_url(project.id)
   end
 
@@ -35,6 +37,7 @@ module ApplicationHelper
 
   def group_page?(group)
     return false if group.nil? || group.id.nil?
+
     request.url == group_url(group.id)
   end
 
@@ -44,7 +47,14 @@ module ApplicationHelper
 
   def edit_group_page?(group)
     return false if group.nil? || group.id.nil?
+
     request.url == edit_group_url(group.id)
+  end
+
+  def edit_user_page?(user)
+    return false if user.nil? || user.id.nil?
+
+    request.url == edit_user_url(user.id)
   end
 
   def image_url_swap(project)
@@ -78,9 +88,4 @@ module ApplicationHelper
       '100%'
     end
   end
-
-  def external_projects(user)
-    
-  end
-
 end

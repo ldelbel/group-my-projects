@@ -4,14 +4,11 @@ class ProjectsController < ApplicationController
 
 
   def index
-    if params[:type].eql?('0')
-      @projects = current_user.projects
-    elsif params[:type].eql?('1')
-      @projects = current_user.projects.includes(:groups).where(groups: {id: nil})
+    if params[:type].eql?('1')
+      @projects = current_user.projects.includes(:groups).where(groups: { id: nil })
     else
       @projects = current_user.projects
     end
-    byebug
   end
 
   def show
@@ -19,6 +16,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @user = current_user
   end
 
   def edit
