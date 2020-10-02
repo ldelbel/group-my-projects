@@ -88,4 +88,57 @@ module ApplicationHelper
       '100%'
     end
   end
+
+  def navbar_back_arrow
+    if logged_in?
+      if project_page?(@project) || new_project_page?
+        link_to(projects_url) do
+          "<i class='fas fa-arrow-left white'></i>".html_safe
+        end.html_safe
+      elsif group_page?(@group) || new_group_page? || edit_group_page?(@group)
+        link_to(groups_url) do
+          "<i class='fas fa-arrow-left white'></i>".html_safe
+        end.html_safe
+      else
+        link_to(user_path(current_user)) do
+          "<i class='fas fa-arrow-left white'></i>".html_safe
+        end.html_safe
+      end
+    else
+      link_to(root_url) do
+        "<i class='fas fa-arrow-left white'></i>".html_safe
+      end.html_safe
+    end
+  end
+
+  def navbar_title
+    case
+    when login_page?
+      "<h4>LOGIN</h4>".html_safe
+    when signup_page?
+     "<h3>REGISTER</h3>".html_safe
+    when projects_page?
+      "<h4>PROJECTS</h4>".html_safe
+    when project_page?(@project)
+      "<h4>#{@project.name}</h4>".html_safe
+    when new_project_page?
+      "<h4>NEW PROJECT</h4>".html_safe
+    when groups_page?
+      "<h4>GROUPS</h4>".html_safe
+    when group_page?(@group)
+     "<h4>#{@group.name} Projects</h4>".html_safe
+    when new_group_page?
+      "<h4>NEW GROUP</h4>".html_safe
+    when edit_group_page?(@group)
+      "<h4>EDIT GROUP</h4>".html_safe
+    when edit_user_page?(@user)
+      "<h4>EDIT USER</h4>".html_safe
+    end
+  end
+
+  def navbar_submit
+    submit_tag("Log in", form: 'login-form').html_safe if login_page?
+    submit_tag("Next", form: 'signup-form').html_safe if signup_page?
+    submit_tag("Edit", form: 'signup-form').html_safe if edit_user_page?(@user)
+  end
 end
