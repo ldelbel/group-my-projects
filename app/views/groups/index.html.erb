@@ -4,7 +4,7 @@
   <% @groups.each do |group| %>
     <%= link_to(group, class: 'block-link') do %>
         <div class="project-card">
-            <div class="project-card__img" style="background-image: url(<%= rails_blob_url(group.icon) %>)">
+            <div class="project-card__img" style="background-image: url(<%= image_url_swap_g(group) %>)">
              </div>
             <div class="project-card__body">
               <div class="project-card__body__upper">

@@ -4,7 +4,7 @@
         <%= link_to projects_url do %>
           <i class="fas fa-arrow-left white"></i>
         <% end %>
-      <% elsif group_page?(@group) || new_group_page? %>
+      <% elsif group_page?(@group) || new_group_page? || edit_group_page?(@group) %>
         <%= link_to groups_url do %>
           <i class="fas fa-arrow-left white"></i>
         <% end %>
@@ -35,10 +35,10 @@
       <h4><%= @group.name %> Projects</h4>
     <% elsif new_group_page? %>
       <h4>NEW GROUP</h4>
+    <% elsif edit_group_page?(@group) %>
+      <h4>EDIT GROUP</h4>
     <% end %>
 
     <%= submit_tag "Log in", form: 'login-form' if login_page? %>
     <%= submit_tag "Next", form: 'signup-form' if signup_page? %>
-    <%# CHANGE HERE TO MENU %>
-    <%= submit_tag "Next", form: 'signup-form' if projects_page? %>
 </nav>

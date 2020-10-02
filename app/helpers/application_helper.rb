@@ -42,4 +42,25 @@ module ApplicationHelper
     request.url == new_group_url
   end
 
+  def edit_group_page?(group)
+    return false if group.nil? || group.id.nil?
+    request.url == edit_group_url(group.id)
+  end
+
+  def image_url_swap(project)
+    if project.groups.empty? || project.groups.first.icon.nil?
+      asset_path('no-group.png')
+    else
+      rails_blob_url(project.groups.first.icon)
+    end
+  end
+
+  def image_url_swap_g(group)
+    if group.nil?
+      asset_path('no-group.png')
+    else
+      rails_blob_url(group.icon)
+    end
+  end
+
 end

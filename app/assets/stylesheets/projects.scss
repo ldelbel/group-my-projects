@@ -112,6 +112,7 @@
   &__container {
     width: 90%;
     height: 90%;
+    padding-top: 1em;
 
     &__info {
       padding-bottom: 1em;
@@ -119,17 +120,14 @@
 
       &__upper {
         display: flex;
-
-        
+       
         &__img {
           margin-right: 0.7em;
           width: 3em;
           height: 3em;
-          background-image: url('../images/ruby-programming-language.png');
           background-position: center;
+          background-size: contain;
           background-repeat: no-repeat;
-          background-size: cover;
-          background-color: #434b54;
         }
 
         &__title {
@@ -164,14 +162,17 @@
 }
 
 .delete-project {
-  width: 100%;
-  
+  width: 95%;
+  margin-top: -1em;
   display: flex;
-
+  justify-content: flex-end;
   a {
-    color: rgb(194, 36, 36);
-    display: block;
-    width: 95%;
+    background-color: rgba(194, 36, 36, 0.8);
+    color:white;
+    display: inline-block;
+    width: 2em;
+    width: -moz-fit-content;
+    width: fit-content;
     text-align: end;
   }
 }
@@ -220,6 +221,12 @@
 .groups-list {
   margin-top: 1em;
   display: flex;
+  flex-direction: column;
+   
+  input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+  }
   
   &__item {
     display: flex;
@@ -229,8 +236,8 @@
     width: fit-content;    
     border: 2px solid #b1adb1;
     border-radius: 0.2em;
-    margin-right: 0.5em;
-
+    margin-left: 0.5em;
+  
     &--img {    
       height: 1.2em;
       width: 1.2em;
@@ -243,21 +250,6 @@
       font-size: 0.9em;
       color: #434b54;
     }
-  
+
   }
-}
-
-.selected-groups {
-  margin-top: 1em;
-  font-weight: 600;
-  color: #878A8F;
-
-  p {
-    margin-right: 1em;
-  }
-}
-
-.checkbox {
-  width: 1em;
-  height: 1em;
 }

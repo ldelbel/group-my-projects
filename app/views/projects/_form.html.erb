@@ -22,21 +22,19 @@
  
               
               <% Group.all.each do |group|  %>
-                <%= check_box_tag 'group_ids[]', group.id %>          
+                <div class='flex-ai'>
+                  <%= check_box_tag 'group_ids[]', group.id %>          
                   <div class="groups-list__item">
-                    <div class="groups-list__item--img" style="background-image: url(<%= rails_blob_url(group.icon) %>)"></div>
+                    <div class="groups-list__item--img" style="background-image: url(<%= image_url_swap_g(group) %>)"></div>
                     <p><%= group.name %></p>
                   </div>
+                </div>
+
               <% end %>
 
 
             </div>
-            <div class="selected-groups flex">
-              <p> Selected: </p>
-              <% @project.groups.each do |group| %>
-                  <div class="groups-list__item--img" style="background-image: url(<%= rails_blob_url(group.icon) %>)"></div>
-              <% end %>
-            </div>
+            
             <div class="button-form-create"><%= form.submit %></div>
       </div>
     <% end %>
