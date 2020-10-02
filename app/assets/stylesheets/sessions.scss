@@ -13,11 +13,22 @@
     border-top: 1px solid #989DA3;
     border-bottom: 1px solid #989DA3;
     font-size: 0.6em;
-    padding: 0.5em;
+    padding: 0.5em;    
 
     &::placeholder {
       color: #989DA3;
     }
+  }
+
+  input[type='file'] {
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid #989DA3;
+    border-bottom: 1px solid #989DA3;
+    font-size: 0.6em;
+    padding: 0.5em;
+    background-color: white;
+    color: #989DA3;
   }
 }
 
