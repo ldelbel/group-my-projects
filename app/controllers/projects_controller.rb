@@ -1,30 +1,27 @@
 class ProjectsController < ApplicationController
   include SessionsHelper
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_project, only: %i[show edit update destroy]
 
   def index
-    if params[:type].eql?('1')
-      @projects = current_user.projects.includes(:groups).where(groups: { id: nil })
-    else
-      @projects = current_user.projects
-    end
+    @projects = if params[:type].eql?('1')
+                  current_user.projects.includes(:groups).where(groups: { id: nil })
+                else
+                  current_user.projects
+                end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @project = Project.new
     @user = current_user
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @project = current_user.projects.new(project_params)
-    if !params[:group_ids].nil?
+    unless params[:group_ids].nil?
       @groups = Group.find(params[:group_ids])
       @project.groups.push(@groups)
     end
@@ -62,11 +59,12 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    def project_params
-      params.require(:project).permit(:name, :time_spent)
-    end
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  def project_params
+    params.require(:project).permit(:name, :time_spent)
+  end
 end

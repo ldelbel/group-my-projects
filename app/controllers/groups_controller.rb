@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   include SessionsHelper
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: %i[show edit update destroy]
 
   def index
     @groups = current_user.groups
@@ -54,13 +54,13 @@ class GroupsController < ApplicationController
     end
   end
 
-
   private
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
-    def group_params
-      params.require(:group).permit(:name, :icon)
-    end
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :icon)
+  end
 end

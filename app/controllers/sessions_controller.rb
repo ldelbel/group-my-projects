@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     else
       flash[:alert] = 'This user doesn\'t exist.'
       render 'new'
-    end 
+    end
   end
 
   def destroy

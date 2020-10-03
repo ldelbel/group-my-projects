@@ -112,33 +112,36 @@ module ApplicationHelper
   end
 
   def navbar_title
-    case
-    when login_page?
-      "<h4>LOGIN</h4>".html_safe
-    when signup_page?
-     "<h4>REGISTER</h4>".html_safe
-    when projects_page?
-      "<h4>PROJECTS</h4>".html_safe
-    when project_page?(@project)
+    if login_page?
+      '<h4>LOGIN</h4>'.html_safe
+    elsif signup_page?
+      '<h4>REGISTER</h4>'.html_safe
+    elsif projects_page?
+      '<h4>PROJECTS</h4>'.html_safe
+    elsif project_page?(@project)
       "<h4>#{@project.name.upcase}</h4>".html_safe
-    when new_project_page?
-      "<h4>NEW PROJECT</h4>".html_safe
-    when groups_page?
-      "<h4>GROUPS</h4>".html_safe
-    when group_page?(@group)
-     "<h4>#{@group.name.upcase} Projects</h4>".html_safe
-    when new_group_page?
-      "<h4>NEW GROUP</h4>".html_safe
-    when edit_group_page?(@group)
-      "<h4>EDIT GROUP</h4>".html_safe
-    when edit_user_page?(@user)
-      "<h4>EDIT USER</h4>".html_safe
+    elsif new_project_page?
+      '<h4>NEW PROJECT</h4>'.html_safe
+    elsif groups_page?
+      '<h4>GROUPS</h4>'.html_safe
+    elsif group_page?(@group)
+      "<h4>#{@group.name.upcase} Projects</h4>".html_safe
+    elsif new_group_page?
+      '<h4>NEW GROUP</h4>'.html_safe
+    elsif edit_group_page?(@group)
+      '<h4>EDIT GROUP</h4>'.html_safe
+    elsif edit_user_page?(@user)
+      '<h4>EDIT USER</h4>'.html_safe
     end
   end
 
   def navbar_submit
-    submit_tag("Log in", form: 'login-form').html_safe if login_page?
-    submit_tag("Next", form: 'signup-form').html_safe if signup_page?
-    submit_tag("Edit", form: 'signup-form').html_safe if edit_user_page?(@user)
+    if login_page?
+      submit_tag('Log in', form: 'login-form').html_safe 
+    elsif signup_page?
+      submit_tag('Next', form: 'signup-form').html_safe
+    elsif edit_user_page?(@user)
+      submit_tag('Edit', form: 'signup-form').html_safe
+    end
   end
 end
