@@ -1,4 +1,5 @@
 <main>
+  <p id="notice"><%= notice %></p>
   <div class="project-show flex-center">
     <div class="project-show__container">
       <div class="project-show__container__info">
@@ -18,7 +19,7 @@
       </div>
     </div>
   </div>
-  <p id="notice"><%= notice %></p>
+
   <div class="delete-project">
     <%= link_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>

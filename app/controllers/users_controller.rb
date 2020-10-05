@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to user_path(current_user) unless current_user?(@user)
+    if current_user.nil?
+      redirect_to login_path
+    elsif !current_user?(@user)
+      redirect_to user_path(current_user)
+    end
   end
 
   def new
