@@ -1,16 +1,15 @@
 require 'rails_helper'
 require 'database_cleaner'
 
+DatabaseCleaner.strategy = :truncation
+
 RSpec.describe 'Groups', type: :request do
   before do
     DatabaseCleaner.clean
-    User.create(name: 'Lucas')
-    get '/login'
-    post '/login', params: {
-      session: {
-        name: 'Lucas'
+    get '/signup'
+    post '/users', params: {
+        user: { name: 'Lucas' }
       }
-    }
   end
 
   context 'when user creates new group' do

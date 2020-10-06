@@ -1,4 +1,5 @@
 <main>
+  <p id="notice"><%= notice %></p>
   <%= form_with(url: login_path, scope: :session, local: true, html: {class: 'login-form flex-center', id: 'login-form'}) do |f| %>
     <%= f.text_field :name, placeholder: 'Name' %>
   <% end %>

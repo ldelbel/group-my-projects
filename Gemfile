@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.12'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
-gem 'devise'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -46,9 +46,9 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

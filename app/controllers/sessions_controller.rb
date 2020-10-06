@@ -11,10 +11,10 @@ class SessionsController < ApplicationController
       redirect_back_or @user
       flash.now[:notice] = 'Logged in successfully!'
     elsif params[:session][:name].empty?
-      flash[:alert] = 'Insert a name to log in.'
+      flash[:notice] = 'Insert a name to log in.'
       render 'new'
     else
-      flash[:alert] = 'This user doesn\'t exist.'
+      flash[:notice] = 'This user doesn\'t exist.'
       render 'new'
     end
   end

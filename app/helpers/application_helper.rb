@@ -58,8 +58,10 @@ module ApplicationHelper
   end
 
   def image_url_swap(project)
-    if project.groups.empty? || project.groups.first.icon.nil?
+    if project.groups.empty? 
       asset_path('no-group.png')
+    elsif !project.groups.first.icon.attached?
+      asset_path('no-icon.png')
     else
       rails_blob_url(project.groups.first.icon)
     end
