@@ -67,4 +67,23 @@ RSpec.describe 'Projects', type: :feature do
       expect(page).to have_content('DevTracker')
     end
   end
+
+  context 'when user deletes project' do
+    before do
+      visit projects_path
+      click_on 'New Project'
+      fill_in 'project_name', with: 'DevTracker'
+      click_on 'commit'
+      click_link('Delete')
+    end
+
+    it 'raises notice' do
+      expect(page).to have_content('Project was successfully destroyed.')
+    end
+
+    it 'erases from projects page' do
+      expect(page).not_to have_content('DevTracker')
+      expect(page).to have_content('PROJECTS')
+    end
+  end
 end
