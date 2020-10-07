@@ -22,7 +22,7 @@
  
               
               <% @user.groups.each do |group|  %>
-                <div class='flex-ai'>
+                <div class='flex-ai mb-05'>
                   <%= check_box_tag 'group_ids[]', group.id %>          
                   <div class="groups-list__item">
                     <div class="groups-list__item--img" style="background-image: url(<%= image_url_swap_g(group) %>)"></div>

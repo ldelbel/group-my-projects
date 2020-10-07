@@ -147,6 +147,7 @@
       justify-content: space-between;
       height: 3.1em;
       line-height: 3.1em;
+      border-bottom: 1px solid #b1adb1;
 
       p {
         font-size: 0.8em;
@@ -155,6 +156,41 @@
 
       span {
         font-weight: 700;
+        color: #434b54;
+      }
+    }
+
+    &__update-time {
+      margin-top: 1em;
+      font-size: 0.8em;
+      color: #878A8F;
+      padding-left: 6.5em;
+
+
+      input[type="number"] {
+        width: 20%;
+        border: 1px solid #878A8F;
+        margin: 0 1em;
+      }
+
+      input[type="submit"] {
+        background-color: #5fb523;
+        color: white;
+        font-weight: 700;
+        padding: 0.2em;
+      }
+    }
+
+    &__update-groups {
+      input[type="submit"] {
+        background-color: #5fb523;
+        color: white;
+        font-weight: 700;
+        padding: 0.2em;
+      }
+      
+      p {
+        font-size: 0.9em;
         color: #434b54;
       }
     }
@@ -237,6 +273,7 @@
     border: 2px solid #b1adb1;
     border-radius: 0.2em;
     margin-left: 0.5em;
+
   
     &--img {    
       height: 1.2em;
@@ -252,4 +289,8 @@
     }
 
   }
+}
+
+.mb-05 {
+  margin-bottom: 0.5em;
 }

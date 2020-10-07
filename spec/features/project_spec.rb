@@ -12,7 +12,7 @@ RSpec.describe 'Projects', type: :feature do
     click_on 'All Projects'
   end
 
-  let(:user){
+  let(:user) {
     User.find_by(name: 'Lucas')
   }
 

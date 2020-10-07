@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
                 end
   end
 
-  def show; end
+  def show
+    @user = current_user
+  end
 
   def new
     @project = Project.new
@@ -39,13 +41,21 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @project.update(project_params)
+    unless params[:project]
+      @project.groups.destroy_all
+      @project.groups.push(Group.where(id: params[:group_ids]))
+      respond_to do |format|
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
-      else
-        format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        if @project.update(project_params)
+          format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+          format.json { render :show, status: :ok, location: @project }
+        else
+          format.html { render :edit }
+          format.json { render json: @project.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
