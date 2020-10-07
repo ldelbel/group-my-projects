@@ -41,9 +41,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    unless params[:project]
-      @project.groups.destroy_all
-      @project.groups.push(Group.where(id: params[:group_ids]))
+    if !params[:project]
+      update_groups(@project, params[:group_ids])
       respond_to do |format|
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
       end
@@ -76,5 +75,12 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :time_spent)
+  end
+
+  def update_groups(project, params)
+    gb = project.groups.empty? ? [] : project.groups.pluck(:id).uniq
+    ga = params.nil? ? [] : params.grep(/\d+/, &:to_i)
+    project.groups.destroy(Group.where(id: gb-ga))
+    project.groups.push(Group.where(id: ga-gb))
   end
 end
