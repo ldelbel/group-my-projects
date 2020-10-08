@@ -1,25 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<main class="profile">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="user_card">
+        <div class="flex-ai">
+          <div class="avatar_list" style="background-image: url(<%= avatar_url_swap(user) %>);
+          opacity: <%= opacity_def(user)  %>"></div>
+          <p><%= user.name %></p>
+        </div>
+        <div  class="flex-ai flex-end">
+          <div>
+            <span>Time Spent:</span> 
+            <span class="green"><%= user.projects.sum(:time_spent) %></span> 
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</main>

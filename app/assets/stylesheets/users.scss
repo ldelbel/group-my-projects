@@ -36,6 +36,20 @@
   }
 }
 
+.community {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  div {
+    padding: 0.3em;
+    border: 2px solid white;
+  }
+}
+
 .avatar {
   border-radius: 50%;
   width: 4.5em;
@@ -43,8 +57,36 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+
+  &_list {
+    @extend .avatar;
+    width: 2.5em;
+    height: 2.5em;
+  }
 }
 
 .file_field {
   font-size: 0.5em;
+}
+
+.user_card {
+  background-color: white;
+  color: #989DA3;
+  width: 95%;
+  border-radius: 0.7em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+
+  p {
+    margin-left: 1em;
+  }
+
+  span {
+    font-size: 0.7em;
+  }
+
+  .green {
+    font-size: 1em;
+    color: #5fb523;
+  }
 }

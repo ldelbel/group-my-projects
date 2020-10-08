@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def create
+    @user = current_user
     @project = current_user.projects.new(project_params)
     unless params[:group_ids].nil?
       @groups = Group.find(params[:group_ids])

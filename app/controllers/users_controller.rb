@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
-    @users = User.all
+    @users = User.includes(:projects).order('projects.time_spent desc')
   end
 
   def show
@@ -63,5 +63,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :avatar)
+  end
+
+  def user_time_spent
+    self.projects.sum(:time_spent)
+    return 0 if self.projects.empty?
   end
 end

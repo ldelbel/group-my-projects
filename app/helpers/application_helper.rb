@@ -57,6 +57,10 @@ module ApplicationHelper
     request.url == edit_user_url(user.id)
   end
 
+  def users_page?
+    request.url == users_url
+  end
+
   def image_url_swap(project)
     if project.groups.empty? 
       asset_path('no-group.png')
@@ -134,6 +138,8 @@ module ApplicationHelper
       '<h4>EDIT GROUP</h4>'.html_safe
     elsif edit_user_page?(@user)
       '<h4>EDIT USER</h4>'.html_safe
+    elsif users_page?
+      '<h4>COMMUNITY</h4>'.html_safe
     end
   end
 
