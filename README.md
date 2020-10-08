@@ -12,7 +12,7 @@
 
   <h2 align="center">DevTracker App</h2>
 
-  <h3 align="center">Capstone Project - Building an Service Web App with Grouping Functionality<h3>
+  <h3 align="center">Capstone Project - Building an Service Mobile Web App with Grouping Functionality<h3>
   <p align="center">
     <a href="https://github.com/ldelbel/group-our-projects"><strong>Explore the docs »</strong></a>
     <br />
@@ -38,7 +38,7 @@
 
 ## About this Project <a name = "about"></a>
 
-This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is an web app for keeping track of hours dedicated in software development projects for developers.
+This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is a web app for keeping track of hours dedicated in software development projects for developers, with Mobile-Only layout. 
 
 
 ![screenshot](./app/assets/images/screenshot.png)
