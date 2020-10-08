@@ -6,7 +6,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/ldelbel/group-our-projects">
+  <a href="https://github.com/ldelbel/group-my-projects">
     <img src="./app/assets/images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -14,13 +14,13 @@
 
   <h3 align="center">Capstone Project - Building an Service Mobile Web App with Grouping Functionality<h3>
   <p align="center">
-    <a href="https://github.com/ldelbel/group-our-projects"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ldelbel/group-my-projects"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     -
-    <a href="https://github.com/ldelbel/group-our-projects/issues">Report Bug</a>
+    <a href="https://github.com/ldelbel/group-my-projects/issues">Report Bug</a>
     -
-    <a href="https://github.com/ldelbel/group-our-projects/pulls">Request Feature</a>
+    <a href="https://github.com/ldelbel/group-my-projects/pulls">Request Feature</a>
     -
   </p>
 </p>
