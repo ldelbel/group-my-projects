@@ -10,9 +10,9 @@
     <img src="images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h2 align="center">Group our Projects App</h2>
+  <h2 align="center">DevTracker App</h2>
 
-  <h3 align="center">Capstone Project - Building an Grouping Service Web App<h3>
+  <h3 align="center">Capstone Project - Building an Service Web App with Grouping Functionality<h3>
   <p align="center">
     <a href="https://github.com/ldelbel/group-our-projects"><strong>Explore the docs »</strong></a>
     <br />
@@ -38,26 +38,44 @@
 
 ## About this Project <a name = "about"></a>
 
-This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is an web app for keeping track of hours dedicated in software development projects for companies, in which you can register solo and group projects.
+This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is an web app for keeping track of hours dedicated in software development projects for developers.
 
+
+![screenshot](./app/assets/images/screenshot.png)
 
 ## 🔧 Built with<a name = "with"></a>
 
 - Ruby 2.7.1
 - Rails 6.0.3.3
+- Postgresql 10.14
 
 ## 🔧 Tested with<a name = "tested"></a>
 
-- RSpec XXX
+- RSpec 3.9
+- Capybara
 
-## 🔨 Setup
+## 🔨 Setup and Installing <a name = "ins"></a>
 
-- Fork the repo to your remote repository.
-- Clone or download the repository to a local directory on your computer.
+To prepare the Setup, run the following commands on terminal:
 
-## 🛠 Installing <a name = "ins"></a>
+```
+$ cd <folder> (to where you want to have the app)
+$ git clone https://github.com/ldelbel/group-my-projects.git
+$ cd group-my-projects
+$ bundle install
+$ yarn install --check-files (in case you don't have yearn installed)
+```
+Then configure postgresql, adding your username and password in database.yml:
 
-TBA
+```
+at group-my-projects/config/database.yml
+
+default: &default
+  adapter: postgresql 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: *****
+  password: *****
+```
 
 ## 🛠 Testing <a name = "testing"></a>
 
@@ -83,5 +101,6 @@ Give a ⭐️ if you like this project!
 
 ## :clap: Acknowledgements
 
-TBA
+- Microverse: [@microverse](https://www.microverse.org/)
+- Design Idead by Gregoire Vella -  [Behance:Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
