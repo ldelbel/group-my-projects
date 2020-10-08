@@ -2,23 +2,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(0deg, rgba(55,119,193,1) 0%, rgba(43,98,156,1) 100%);
+  background: linear-gradient(0deg, rgba(55, 119, 193, 1) 0%, rgba(43, 98, 156, 1) 100%);
   color: white;
   font-size: 3.5em;
-  height: 2.2em; 
+  height: 2.2em;
   padding: 0 0.5em 0 0.5em;
 
   h4 {
     font-size: 0.9em;
-    opacity: 85%;
+    opacity: 0.85;
   }
 
   input[type='submit'] {
     background-color: transparent;
     color: white;
     font-weight: 700;
-    opacity: 85%;
-
+    opacity: 0.85;
   }
 }
 
@@ -33,7 +32,7 @@ main {
   font-size: 3em;
   font-family: 'Pacifico', sans-serif;
   margin-bottom: 3.5em;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .home {
@@ -57,29 +56,35 @@ input,
 
 .flex {
   display: flex;
+
   &-col {
     @extend .flex;
+
     flex-direction: column;
   }
 
   &-center {
     @extend .flex;
+
     justify-content: center;
     align-items: center;
   }
 
-  &-ai{
+  &-ai {
     @extend .flex;
+
     align-items: center;
   }
 
   &-jc {
     @extend .flex;
+
     justify-content: center;
   }
-  
+
   &-end {
     @extend .flex;
+
     justify-content: flex-end;
   }
 }
@@ -92,6 +97,7 @@ input,
 
   &-90 {
     @extend .btn;
+
     width: 90%;
   }
 }
@@ -111,7 +117,7 @@ input,
 }
 
 .blue {
-  background-color: #3979C3;
+  background-color: #3979c3;
   color: white;
 }
 
@@ -122,4 +128,3 @@ input,
 .gray-background {
   background-color: #f1f3f2;
 }
-

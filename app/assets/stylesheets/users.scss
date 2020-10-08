@@ -1,10 +1,10 @@
 .login-link {
-  color: #989DA3;
+  color: #989da3;
   margin-top: 1em;
 }
 
 .profile {
-  background: linear-gradient(0deg, rgba(55,119,193,1) 0%, rgba(43,98,156,1) 100%);
+  background: linear-gradient(0deg, rgba(55, 119, 193, 1) 0%, rgba(43, 98, 156, 1) 100%);
   color: white;
   height: 100%;
   min-height: 100vh;
@@ -60,6 +60,7 @@
 
   &_list {
     @extend .avatar;
+
     width: 2.5em;
     height: 2.5em;
   }
@@ -71,7 +72,7 @@
 
 .user_card {
   background-color: white;
-  color: #989DA3;
+  color: #989da3;
   width: 95%;
   border-radius: 0.7em;
   padding: 0.5em;

@@ -9,7 +9,7 @@
   border-bottom: 2px solid #b1adb1;
 
   p {
-    color: #878A8F;
+    color: #878a8f;
   }
 
   span {
@@ -36,6 +36,7 @@
 
   &1 {
     @extend .project-card;
+
     height: 6em;
   }
 
@@ -52,13 +53,13 @@
     width: 75%;
     display: flex;
     flex-direction: column;
-    
+
     &__upper {
       display: flex;
       justify-content: space-between;
       height: 2.8em;
       border-bottom: 1px solid #b1adb1;
-    
+
       &__title,
       &__time {
         font-size: 0.9em;
@@ -66,7 +67,7 @@
       }
 
       &__title {
-        color: #878A8F;
+        color: #878a8f;
       }
 
       &__time {
@@ -94,7 +95,7 @@
   font-weight: 700;
   height: 2em;
   line-height: 2em;
-  
+
   &__div {
     border: 3px solid white;
     margin: auto;
@@ -120,7 +121,7 @@
 
       &__upper {
         display: flex;
-       
+
         &__img {
           margin-right: 0.7em;
           width: 3em;
@@ -131,7 +132,7 @@
         }
 
         &__title {
-          line-height: 3em;          
+          line-height: 3em;
         }
       }
 
@@ -151,7 +152,7 @@
 
       p {
         font-size: 0.8em;
-        color: #878A8F;
+        color: #878a8f;
       }
 
       span {
@@ -163,13 +164,12 @@
     &__update-time {
       margin-top: 1em;
       font-size: 0.8em;
-      color: #878A8F;
+      color: #878a8f;
       padding-left: 6.5em;
-
 
       input[type="number"] {
         width: 20%;
-        border: 1px solid #878A8F;
+        border: 1px solid #878a8f;
         margin: 0 1em;
       }
 
@@ -202,12 +202,12 @@
   margin-top: -1em;
   display: flex;
   justify-content: flex-end;
+
   a {
     background-color: rgba(194, 36, 36, 0.8);
-    color:white;
+    color: white;
     display: inline-block;
     width: 2em;
-    width: -moz-fit-content;
     width: fit-content;
     text-align: end;
   }
@@ -237,11 +237,11 @@
 .button-form-create {
   margin-top: 2em;
   height: 3em;
-  
+
   input {
     width: 100%;
     height: 100%;
-    background-color: #5fb523 ;
+    background-color: #5fb523;
     color: white;
     font-weight: 700;
     font-size: 1.5em;
@@ -251,31 +251,29 @@
 .select {
   margin-top: 1em;
   font-weight: 600;
-  color: #878A8F;
+  color: #878a8f;
 }
 
 .groups-list {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
-   
+
   input[type="checkbox"] {
     width: 1.5em;
     height: 1.5em;
   }
-  
+
   &__item {
     display: flex;
     flex-wrap: wrap;
     padding: 0.3em;
-    width: -moz-fit-content;
-    width: fit-content;    
+    width: fit-content;
     border: 2px solid #b1adb1;
     border-radius: 0.2em;
     margin-left: 0.5em;
 
-  
-    &--img {    
+    &--img {
       height: 1.2em;
       width: 1.2em;
       background-position: center;
@@ -287,7 +285,6 @@
       font-size: 0.9em;
       color: #434b54;
     }
-
   }
 }
 

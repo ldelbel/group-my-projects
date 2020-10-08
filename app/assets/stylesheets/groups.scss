@@ -1,9 +1,9 @@
 .group {
-  background: linear-gradient(0deg, rgba(55,119,193,1) 0%, rgba(43,98,156,1) 100%);
+  background: linear-gradient(0deg, rgba(55, 119, 193, 1) 0%, rgba(43, 98, 156, 1) 100%);
   color: white;
   height: 100%;
   min-height: 93vh;
-  font-size: 4em;  
+  font-size: 4em;
   padding-bottom: 2em;
 
   a {
@@ -36,7 +36,7 @@
   width: 95%;
   display: flex;
   justify-content: flex-end;
-  
+
   a {
     display: inline-block;
     padding: 0 1em 0 1em;
@@ -47,6 +47,6 @@
   }
 
   .delete-button {
-    background-color:  rgb(194, 36, 36);
+    background-color: rgb(194, 36, 36);
   }
 }
