@@ -40,8 +40,8 @@
 
 This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is a web app for keeping track of hours dedicated in software development projects for developers, with Mobile-Only layout. 
 
+  ![screenshot](./app/assets/images/screenshot.png) 
 
-<div align="center">![screenshot](./app/assets/images/screenshot.png)</div>
 
 ## 🔧 Built with<a name = "with"></a>
 
