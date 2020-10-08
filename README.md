@@ -40,8 +40,8 @@
 
 This project is a requirement from Microverse for completing Ruby on Rails Curriculum. It is a web app for keeping track of hours dedicated in software development projects for developers, with Mobile-Only layout. 
 
+  ![screenshot](./app/assets/images/screenshot.png) 
 
-![screenshot](./app/assets/images/screenshot.png)
 
 ## 🔧 Built with<a name = "with"></a>
 
@@ -53,6 +53,10 @@ This project is a requirement from Microverse for completing Ruby on Rails Curri
 
 - RSpec 3.9
 - Capybara
+
+## Live Demo Link <a name = "ll"></a>
+
+[Live Demo](https://thawing-forest-04568.herokuapp.com/)
 
 ## 🔨 Setup and Installing <a name = "ins"></a>
 
