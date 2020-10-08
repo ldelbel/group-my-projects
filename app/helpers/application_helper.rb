@@ -62,7 +62,7 @@ module ApplicationHelper
   end
 
   def image_url_swap(project)
-    if project.groups.empty? 
+    if project.groups.empty?
       asset_path('no-group.png')
     elsif !project.groups[0].icon.attached?
       asset_path('no-icon.png')
@@ -145,7 +145,7 @@ module ApplicationHelper
 
   def navbar_submit
     if login_page?
-      submit_tag('Log in', form: 'login-form').html_safe 
+      submit_tag('Log in', form: 'login-form').html_safe
     elsif signup_page?
       submit_tag('Next', form: 'signup-form').html_safe
     elsif edit_user_page?(@user)

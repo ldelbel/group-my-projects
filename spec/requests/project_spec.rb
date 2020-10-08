@@ -12,7 +12,7 @@ RSpec.describe 'Projects', type: :request do
       }
     }
   end
-  
+
   context 'when user creates new project' do
     it 'creates project and redirect to project show' do
       get '/projects/new'
@@ -23,7 +23,7 @@ RSpec.describe 'Projects', type: :request do
       follow_redirect!
 
       expect(response).to render_template(:show)
-      expect(response.body).to include("Project was successfully created.")
+      expect(response.body).to include('Project was successfully created.')
     end
   end
 end

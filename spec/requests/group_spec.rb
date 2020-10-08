@@ -8,8 +8,8 @@ RSpec.describe 'Groups', type: :request do
     DatabaseCleaner.clean
     get '/signup'
     post '/users', params: {
-        user: { name: 'Lucas' }
-      }
+      user: { name: 'Lucas' }
+    }
   end
 
   context 'when user creates new group' do
@@ -22,7 +22,7 @@ RSpec.describe 'Groups', type: :request do
       follow_redirect!
 
       expect(response).to render_template(:index)
-      expect(response.body).to include("Group was successfully created.")
+      expect(response.body).to include('Group was successfully created.')
     end
   end
 end

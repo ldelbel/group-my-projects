@@ -8,30 +8,30 @@ RSpec.describe 'Users', type: :feature do
     DatabaseCleaner.clean
     User.create(name: 'Lucas')
   end
-  
-  let(:signup_lucas) {
+
+  let(:signup_lucas) do
     visit '/signup'
     fill_in 'user_name', with: 'Lucas'
     click_on 'commit'
-  }
-  let(:signup_delbel) {
+  end
+  let(:signup_delbel) do
     visit '/signup'
     fill_in 'user_name', with: 'Delbel'
     click_on 'commit'
-  }
-  let(:signup_short) {
+  end
+  let(:signup_short) do
     visit '/signup'
     fill_in 'user_name', with: 'De'
     click_on 'commit'
-  }
-  let(:signin_lucas) {
+  end
+  let(:signin_lucas) do
     visit '/login'
     fill_in 'session_name', with: 'Lucas'
     click_on 'commit'
-  }
-  let(:user) {
+  end
+  let(:user) do
     User.find_by(name: 'Lucas')
-  }
+  end
 
   describe 'Sign Up' do
     context 'when user add valid input' do

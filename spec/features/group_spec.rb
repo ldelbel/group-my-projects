@@ -14,9 +14,9 @@ RSpec.describe 'Groups', type: :feature do
     click_on 'All Groups'
   end
 
-  let(:user){
+  let(:user) do
     User.find_by(name: 'Lucas')
-  }
+  end
 
   context 'when user clicks on new group' do
     it 'opens new group page' do
@@ -62,4 +62,3 @@ RSpec.describe 'Groups', type: :feature do
     end
   end
 end
-

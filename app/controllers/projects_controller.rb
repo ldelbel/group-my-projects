@@ -81,7 +81,7 @@ class ProjectsController < ApplicationController
   def update_groups(project, params)
     gb = project.groups.empty? ? [] : project.groups.pluck(:id).uniq
     ga = params.nil? ? [] : params.grep(/\d+/, &:to_i)
-    project.groups.destroy(Group.where(id: gb-ga))
-    project.groups.push(Group.where(id: ga-gb))
+    project.groups.destroy(Group.where(id: gb - ga))
+    project.groups.push(Group.where(id: ga - gb))
   end
 end

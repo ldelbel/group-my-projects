@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   end
 
   def user_time_spent
-    self.projects.sum(:time_spent)
-    return 0 if self.projects.empty?
+    projects.sum(:time_spent)
+    return 0 if projects.empty?
   end
 end

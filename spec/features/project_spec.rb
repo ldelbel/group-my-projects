@@ -12,22 +12,22 @@ RSpec.describe 'Projects', type: :feature do
     click_on 'All Projects'
   end
 
-  let(:user) {
+  let(:user) do
     User.find_by(name: 'Lucas')
-  }
+  end
 
-  let(:create_group) {
+  let(:create_group) do
     visit '/groups'
     click_on 'New Group'
     fill_in 'group_name', with: 'Ruby on Rails'
     click_on 'commit'
     find("a[href='#{user_path(user)}']").click
     click_on 'All Projects'
-  }
+  end
 
-  let(:group) {
+  let(:group) do
     Group.find_by(name: 'Ruby on Rails')
-  }
+  end
 
   context 'when user clicks on create project' do
     it 'opens new project page' do

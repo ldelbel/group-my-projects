@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'database_cleaner'
 
 RSpec.describe 'Users', type: :request do
-  let(:signin) {
+  let(:signin) do
     DatabaseCleaner.clean
     User.create(name: 'Lucas')
     get '/login'
@@ -11,7 +11,7 @@ RSpec.describe 'Users', type: :request do
         name: 'Lucas'
       }
     }
-  }
+  end
 
   describe 'Before login while in Homepage' do
     context 'when user access login page' do
@@ -27,7 +27,7 @@ RSpec.describe 'Users', type: :request do
         expect(response).to have_http_status(:ok)
       end
     end
-    
+
     context 'when user tries to access profile page without login' do
       it 'opens login page' do
         get '/users/1'
@@ -53,12 +53,12 @@ RSpec.describe 'Users', type: :request do
         get '/users/1/edit'
         expect(response).to have_http_status(:ok)
 
-        get '/projects', params: {type: 0}
+        get '/projects', params: { type: 0 }
         expect(response).to have_http_status(:ok)
 
-        get '/projects', params: {type: 1}
+        get '/projects', params: { type: 1 }
         expect(response).to have_http_status(:ok)
-        
+
         get '/groups'
         expect(response).to have_http_status(:ok)
 
