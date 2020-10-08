@@ -54,6 +54,10 @@ This project is a requirement from Microverse for completing Ruby on Rails Curri
 - RSpec 3.9
 - Capybara
 
+## Live Demo Link <a name = "ll"></a>
+
+[Live Demo](https://thawing-forest-04568.herokuapp.com/)
+
 ## 🔨 Setup and Installing <a name = "ins"></a>
 
 To prepare the Setup, run the following commands on terminal:
