@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   
   resources :users, only: %i[index show edit update new create]
   resources :groups
-  resources :projects
-
+  resources :projects, only: %i[index show update new create destroy]
 
   root to: 'application#home'
 end
