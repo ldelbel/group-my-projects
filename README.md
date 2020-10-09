@@ -80,6 +80,12 @@ default: &default
   username: *****
   password: *****
 ```
+Finally, create and migrate databases: 
+
+```
+$ rake db:create
+$ rake db:migrate
+```
 
 ## 🛠 Testing <a name = "testing"></a>
 
