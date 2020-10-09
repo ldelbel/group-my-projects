@@ -157,11 +157,11 @@ module ApplicationHelper
     if model.errors.any?
       html = ""
       html << "<div id='error_explanation'>"
-      html << "<h2><%= pluralize(#{model}.errors.count, 'error') %> prohibited it from being saved:</h2>"
+      html << "<h2>#{pluralize(model.errors.count, 'error')} prohibited it from being saved:</h2>"
       html << "<ul>"
-      html << "<% #{model}.errors.full_messages.each do |message| %>"
-      html << "<li><%= message %></li>"
-      html << "<% end %>"
+      model.errors.full_messages.each do |message|
+        html << "<li>#{message}</li>"
+      end
       html << "</ul>"
       html << "</div>"
       html.html_safe

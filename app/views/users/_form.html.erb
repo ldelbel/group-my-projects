@@ -1,5 +1,5 @@
 <%= form_with(model: user, local: true, html: { class: 'login-form', id: 'signup-form' }) do |form| %>
- <%= errors(user) %>
+  <%= errors(user) %>
 
   <div class="actions">
     <%= form.file_field :avatar, class: 'file_field' %>
