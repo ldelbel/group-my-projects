@@ -1,17 +1,7 @@
 <div class="project-show flex-center">
   <div class="project-show__container">
     <%= form_with(model: project, local: true) do |form| %>
-      <% if project.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-          <ul>
-            <% project.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= errors(project) %>
 
       <div class="actions-new-project">
             <div class="input-form"> Project Name <%= form.text_field :name %><br></div>

@@ -152,4 +152,19 @@ module ApplicationHelper
       submit_tag('Edit', form: 'signup-form').html_safe
     end
   end
+  
+  def errors(model)
+    if model.errors.any?
+      html = ""
+      html << "<div id='error_explanation'>"
+      html << "<h2><%= pluralize(#{model}.errors.count, 'error') %> prohibited it from being saved:</h2>"
+      html << "<ul>"
+      html << "<% #{model}.errors.full_messages.each do |message| %>"
+      html << "<li><%= message %></li>"
+      html << "<% end %>"
+      html << "</ul>"
+      html << "</div>"
+      html.html_safe
+    end
+  end
 end
