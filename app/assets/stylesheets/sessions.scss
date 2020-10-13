@@ -1,0 +1,38 @@
+// Place all the styles related to the Session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.login-form {
+  font-size: 2em;
+  margin-top: 0.4em;
+  width: 100%;
+
+  input[type='text'] {
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid #989da3;
+    border-bottom: 1px solid #989da3;
+    font-size: 0.6em;
+    padding: 0.5em;
+
+    &::placeholder {
+      color: #989da3;
+    }
+  }
+
+  input[type='file'] {
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid #989da3;
+    border-bottom: 1px solid #989da3;
+    font-size: 0.6em;
+    padding: 0.5em;
+    background-color: white;
+    color: #989da3;
+  }
+}
+
+.signup-link {
+  color: #989da3;
+  margin-top: 1em;
+}

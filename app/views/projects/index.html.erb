@@ -1,0 +1,43 @@
+<main>
+<p id="notice"><%= notice %></p>
+
+<div class="total-time">
+  <p>Dev Time</p>
+  <span>
+    <%= @projects.sum(:time_spent) %> hours
+  </span>
+</div>
+
+<% @projects.each do |project| %>
+  <%= link_to(project, class: 'block-link') do %>
+  <div class="project-card">
+    <div class="project-card__img" style="background-image: url(<%= image_url_swap(project) %>) "></div>
+    <div class="project-card__body">
+      <div class="project-card__body__upper">
+        <div class="project-card__body__upper__title">
+          <%= project.name %>
+        </div>
+        <div class="project-card__body__upper__time">
+          <%= project.time_spent %> hrs
+        </div>
+      </div>    
+      <div class="project-card__body__bottom">
+        Last Update: <%= project.updated_at.to_date.to_formatted_s(:long) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+
+
+<br>
+
+<%= link_to(new_project_path, class: 'block-link') do %>
+<div class="new-project-button flex-center">
+  <div class="new-project-button__div flex-center">
+    New Project
+  </div>
+</div>
+<% end %>
+
+</main>

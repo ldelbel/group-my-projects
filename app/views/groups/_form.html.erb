@@ -1,0 +1,13 @@
+<div class="project-show flex-center">
+  <div class="project-show__container">
+    <%= form_with(model: group, local: true) do |form| %>
+      <%= errors(group) %>
+
+      <div class="actions-new-project">
+        <div class="attach-form">Upload Group Icon<br><%= form.file_field :icon %></div>
+        <div class="input-form"> Group Name <%= form.text_field :name %><br></div>
+        <div class="button-form-create"><%= form.submit %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
