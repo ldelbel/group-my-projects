@@ -1,0 +1,67 @@
+<main class="profile">
+
+  <p id="notice"><%= notice %></p>
+  <div class="community">
+    <div>
+      <%= link_to 'Community', users_path %>
+    </div>
+  </div>
+
+  <div class="avatar" style="background-image: url(<%= avatar_url_swap(current_user) %>);
+  opacity: <%= opacity_def(current_user)  %>"></div>
+
+  <%= current_user.name %>
+
+
+  <div class="profile-card">
+    <div class="profile-card__icon-div flex-center">
+      <i class="fab fa-airbnb"></i>
+    </div>
+    <div class="profile-card__text-div">
+      <p> 
+        <%= link_to 'Edit account', edit_user_path(@user) %>
+      </p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="profile-card__icon-div flex-center">
+      <i class="fab fa-airbnb"></i>
+    </div>
+    <div class="profile-card__text-div">
+      <p> 
+        <%= link_to 'All Projects', projects_path(type: 0) %>
+      </p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="profile-card__icon-div flex-center">
+      <i class="fab fa-airbnb"></i>
+    </div>
+    <div class="profile-card__text-div">
+      <p> 
+        <%= link_to 'All External Projects', projects_path(type: 1) %>
+      </p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="profile-card__icon-div flex-center">
+      <i class="fab fa-airbnb"></i>
+    </div>
+    <div class="profile-card__text-div">
+      <p> 
+        <%= link_to 'All Groups', groups_path %>
+      </p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="profile-card__icon-div flex-center">
+      <i class="fab fa-airbnb"></i>
+    </div>
+    <div class="profile-card__text-div">
+      <p> 
+        <%= link_to 'Log out', logout_path, method: :delete %>
+      </p>
+    </div>
+  </div>
+
+</main>

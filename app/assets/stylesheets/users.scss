@@ -1,0 +1,93 @@
+.login-link {
+  color: #989da3;
+  margin-top: 1em;
+}
+
+.profile {
+  background: linear-gradient(0deg, rgba(55, 119, 193, 1) 0%, rgba(43, 98, 156, 1) 100%);
+  color: white;
+  height: 100%;
+  min-height: 100vh;
+  padding: 2em 0 2em 0;
+  font-size: 4em;
+
+  a {
+    color: rgba(255, 255, 255, 0.863);
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+    width: 80%;
+
+    &__icon-div {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.774);
+      margin-right: 0.8em;
+    }
+
+    &__text-div {
+      width: 85%;
+      border-bottom: 1px solid white;
+      line-height: 3em;
+    }
+  }
+}
+
+.community {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  div {
+    padding: 0.3em;
+    border: 2px solid white;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 4.5em;
+  height: 4.5em;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &_list {
+    @extend .avatar;
+
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+
+.file_field {
+  font-size: 0.5em;
+}
+
+.user_card {
+  background-color: white;
+  color: #989da3;
+  width: 95%;
+  border-radius: 0.7em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+
+  p {
+    margin-left: 1em;
+  }
+
+  span {
+    font-size: 0.7em;
+  }
+
+  .green {
+    font-size: 1em;
+    color: #5fb523;
+  }
+}

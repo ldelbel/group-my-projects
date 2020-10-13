@@ -1,0 +1,32 @@
+<div class="project-show flex-center">
+  <div class="project-show__container">
+    <%= form_with(model: project, local: true) do |form| %>
+      <%= errors(project) %>
+
+      <div class="actions-new-project">
+            <div class="input-form"> Project Name <%= form.text_field :name %><br></div>
+            <div class="input-form">Time Consumed (in hours) <%= form.number_field :time_spent %></div>
+            <div class="select">Select groups:</div>
+
+            <div class="groups-list">
+ 
+              
+              <% @user.groups.each do |group|  %>
+                <div class='flex-ai mb-05'>
+                  <%= check_box_tag 'group_ids[]', group.id %>          
+                  <div class="groups-list__item">
+                    <div class="groups-list__item--img" style="background-image: url(<%= image_url_swap_g(group) %>)"></div>
+                    <p><%= group.name %></p>
+                  </div>
+                </div>
+
+              <% end %>
+
+
+            </div>
+            
+            <div class="button-form-create"><%= form.submit %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

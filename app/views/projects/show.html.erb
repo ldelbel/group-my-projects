@@ -1,0 +1,59 @@
+<main>
+  <p id="notice"><%= notice %></p>
+  <div class="project-show flex-center">
+    <div class="project-show__container">
+      <div class="project-show__container__info">
+        <div class="project-show__container__info__upper">
+          <div class="project-show__container__info__upper__img" style="background-image: url(<%= image_url_swap(@project) %>)"></div>
+          <div class="project-show__container__info__upper__title">
+            <%= @project.name  %>
+          </div>
+        </div>
+        <div class="project-show__container__info__bottom">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At omnis praesentium alias veritatis voluptatem. Aliquam quod deserunt nulla, quaerat error aut doloremque libero et sunt odio distinctio nam vero quos.
+        </div>
+      </div>
+      <div class="project-show__container__time">
+        <p>Total development time</p>
+        <span><%= @project.time_spent %> hrs</span>
+      </div>
+      <div class="project-show__container__update-time">
+        <%= form_with(model: @project, local: true, method: :patch) do |form| %>
+          Change Time
+          <%= form.number_field :time_spent %>
+          <%= form.submit 'Update' %>
+        <% end %>
+      </div>
+      <div class="project-show__container__update-groups">
+        <div>
+          <div>
+            <p>
+              Groups: 
+            </p>
+            <div class="groups-list">
+              <%= form_with(model: @project, local: true, method: :patch) do |form| %>
+                <% @user.groups.each do |group|  %>
+                  <div class='flex-ai mb-05'>
+                    <%= check_box_tag 'group_ids[]', group.id, @project.groups.include?(group) %>          
+                    <div class="groups-list__item">
+                      <div class="groups-list__item--img" style="background-image: url(<%= image_url_swap_g(group) %>)"></div>
+                      <p><%= group.name %></p>
+                    </div>
+                  </div>
+                <% end %>
+                <%= form.submit 'Update' %>
+              <% end %>
+            </div>
+          </div>
+          <div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="delete-project">
+    <%= link_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</main>
